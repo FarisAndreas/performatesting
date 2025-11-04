@@ -7,7 +7,12 @@ const compat = new FlatCompat({
   eslintrc: true
 });
 
-module.exports = [
+module.exports = {
+  // ... konfigurasi lain
+  globals: {
+    __ENV: 'readonly',
+  },
+};
   js.configs.recommended,
   ...compat.config({
     env: { 
