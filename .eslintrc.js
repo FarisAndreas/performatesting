@@ -8,9 +8,21 @@ const compat = new FlatCompat({
 });
 
 module.exports = {
-  // ... konfigurasi lain
+  env: {
+    browser: true,
+    node: true,
+    es2021: true,
+  },
+  extends: ['eslint:recommended'],
+  parserOptions: {
+    ecmaVersion: 12,
+    sourceType: 'module',
+  },
   globals: {
     __ENV: 'readonly',
+  },
+  rules: {
+    // Tambahkan aturan khusus jika perlu
   },
 };
   js.configs.recommended,
