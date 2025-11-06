@@ -2,14 +2,14 @@ module.exports = {
   env: {
     node: true,
     es2021: true,
-    jest: true, // ✅ mendukung test, expect, beforeEach
+    jest: true,
   },
   parserOptions: {
     ecmaVersion: 12,
     sourceType: 'script',
   },
   globals: {
-    __ENV: 'readonly', // ✅ untuk k6
+    __ENV: 'readonly',
   },
   rules: {
     'no-undef': 'error',
@@ -17,4 +17,12 @@ module.exports = {
     'no-console': 'off',
     'eqeqeq': ['error', 'always'],
   },
+  overrides: [
+    {
+      files: ['loadtest/**/*.js'],
+      parserOptions: {
+        sourceType: 'module',
+      },
+    },
+  ],
 };
