@@ -9,20 +9,22 @@ const compat = new FlatCompat({
 
 module.exports = {
   env: {
-    browser: true,
     node: true,
     es2021: true,
   },
-  extends: ['eslint:recommended'],
   parserOptions: {
     ecmaVersion: 12,
-    sourceType: 'module',
+    sourceType: 'script',
   },
   globals: {
     __ENV: 'readonly',
+    require: 'readonly',
+    process: 'readonly',
+    console: 'readonly',
+    module: 'readonly',
   },
   rules: {
-    // Tambahkan aturan khusus jika perlu
+    'no-undef': 'error',
   },
 };
   js.configs.recommended,
