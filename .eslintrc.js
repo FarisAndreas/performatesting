@@ -18,10 +18,6 @@ module.exports = {
   },
   globals: {
     __ENV: 'readonly',
-    require: 'readonly',
-    process: 'readonly',
-    console: 'readonly',
-    module: 'readonly',
   },
   rules: {
     'no-undef': 'error',
