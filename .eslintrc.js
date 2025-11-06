@@ -11,6 +11,7 @@ module.exports = {
   env: {
     node: true,
     es2021: true,
+    jest: true, // ✅ untuk mendukung test, expect, beforeEach
   },
   parserOptions: {
     ecmaVersion: 12,
@@ -21,6 +22,7 @@ module.exports = {
   },
   rules: {
     'no-undef': 'error',
+    'no-unused-vars': 'warn',
   },
 };
   js.configs.recommended,
