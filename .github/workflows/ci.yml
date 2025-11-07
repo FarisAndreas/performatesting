@@ -71,12 +71,13 @@ jobs:
 
       - name: Install k6
         run: |
-          sudo gpg -k
-          sudo gpg --no-default-keyring --keyring /usr/share/keyrings/k6-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C5AD17C747E3415A3642D57D77C6C491D6AC1D69
-          echo "deb [signed-by=/usr/share/keyrings/k6-archive-keyring.gpg] https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
-          sudo apt-get update
-          sudo apt-get install k6
-
-
+          K6_VERSION=$(curl -s "https://api.github.com/repos/grafana/k6/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
+          wget -qO k6.tar.gz https://github.com/grafana/k6/releases/latest/download/k6-v$K6_VERSION-linux-amd64.tar.gz
+          mkdir k6-temp
+          tar xf k6.tar.gz --strip-components=1 -C k6-temp
+          sudo mv k6-temp/k6 /usr/local/bin
+          k6 --version
+          rm -rf k6.tar.gz k6-temp
+          
       - name: Run k6 smoke test
         run: k6 run tests/smoke.js
