@@ -71,8 +71,7 @@ jobs:
 
       - name: Install k6
         run: |
-          curl -s https://api.k6.io/downloads/k6-latest-linux64.tar.gz | tar xz
-          sudo mv k6-*/k6 /usr/local/bin/
+          sudo apt install k6
 
       - name: Run k6 smoke test
         run: k6 run tests/smoke.js
