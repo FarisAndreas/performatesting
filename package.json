@@ -1,11 +1,11 @@
 {
   "name": "notes-app-sonar",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.cjs",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "node index.cjs",
+    "dev": "nodemon index.cjs",
     "test": "jest --coverage --runInBand",
     "lint": "eslint .",
     "k6": "k6 run loadtest/script.js"

@@ -1,7 +1,7 @@
 // src/app.js
 const express = require('express');
 const bodyParser = require('body-parser');
-const store = require('./store');
+const store = require('./store.cjs');
 
 const app = express();
 app.use(bodyParser.json());
@@ -40,3 +40,4 @@ app.delete('/notes/:id', (req, res) => {
 });
 
 module.exports = app;
+//export default app;
