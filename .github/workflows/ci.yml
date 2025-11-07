@@ -71,9 +71,7 @@ jobs:
 
       - name: Install k6
         run: |
-          wget -O k6.tar.gz https://api.k6.io/downloads/k6-latest-linux64.tar.gz
-          tar -xzf k6.tar.gz
-          sudo mv k6-*/k6 /usr/local/bin/
+          sudo apt-get install k6
 
 
       - name: Run k6 smoke test
