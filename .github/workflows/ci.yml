@@ -78,6 +78,6 @@ jobs:
           sudo mv k6-temp/k6 /usr/local/bin
           k6 --version
           rm -rf k6.tar.gz k6-temp
-          
+
       - name: Run k6 smoke test
-        run: k6 run tests/smoke.js
+        run: k6 run loadtests/script.js
