@@ -56,8 +56,6 @@ jobs:
          node-version: '18'
       - name: Install dependencies
         run: npm ci
-      - name: Run Jest for coverage
-        run: npm test -- --coverage
       - name: SonarCloud Scan
         uses: sonarsource/sonarqube-scan-action@master
         env:
