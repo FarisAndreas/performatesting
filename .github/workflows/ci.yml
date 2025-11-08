@@ -80,3 +80,4 @@ jobs:
 
       - name: Run k6 smoke test
         run: k6 run loadtest/script.js
+        
